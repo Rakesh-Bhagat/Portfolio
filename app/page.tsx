@@ -1,7 +1,7 @@
 "use client"
 import Navbar from "@/components/Navbar";
 import SkillCard from "@/components/SkillCard";
-import { Circle } from "lucide-react";
+import { ArrowRight, Circle } from "lucide-react";
 import Image from "next/image";
 import skills from "@/data/skills";
 import ProjectCard from "@/components/ProjectCard";
@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import projects from "@/data/projects";
 import {AnimatePresence, motion, useAnimationFrame}  from "motion/react";
 import { useState } from "react";
+import Link from "next/link";
 
 const gradients = [
   "radial-gradient(ellipse 100% 40% at 50% 0%, rgba(0, 0, 255, 0.7), transparent 50%)",
@@ -18,6 +19,7 @@ const gradients = [
   "radial-gradient(ellipse 100% 40% at 50% 0%, rgba(130, 0, 219, 0.7), transparent 50%)",
 ];
 
+
 export default function Home() {
    const [gradientIndex, setGradientIndex] = useState(0);
   
@@ -26,7 +28,7 @@ export default function Home() {
     setGradientIndex(idx);
   });
   return (
-    <div className=" h-screen mx-auto w-full md:max-w-xl tv:max-w-2xl flex flex-col font-poppins px-5">
+    <div className=" h-screen mx-auto w-full md:max-w-2xl flex flex-col font-poppins px-5">
       <AnimatePresence>
         <motion.div
           className="absolute top-20 left-[-100] w-full h-[300px] z-[-1]"
@@ -47,7 +49,7 @@ export default function Home() {
           className="rounded-full mr-8"
           src={"/dp.png"}
           width={70}
-          height={60}
+          height={70}
           alt="dp"
         />
         <div className="flex flex-col">
@@ -64,7 +66,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <p className="tracking-normal leading-6 text-neutral-800 text-sm sm:text-md">
+      <p className="tracking-normal leading-6 text-neutral-800">
         I&apos;m a 21-year-old full stack developer from India, with a focus on
         building clean and functional web applications. I enjoy learning by
         building real projects and solving practical problems.
@@ -76,9 +78,15 @@ export default function Home() {
         ))}
       </div>
 
-      <h2 className="mt-10 bg-neutral-100 w-fit px-2 py-1 font-poppins rounded-md text-neutral-500 text-xs border border-neutral-200 shadow-xs">
+      <div className=" mt-10 flex justify-between items-center">
+        <h2 className="flex bg-neutral-100 w-fit px-2 py-1 font-poppins rounded-md text-neutral-500 text-xs border border-neutral-200 shadow-xs">
         Recent Projects
-      </h2>
+      </h2 >
+      <Link href={"/projects"}>
+      <h2 className="flex text-neutral-500 hover:text-neutral-800 cursor-pointer">View more <ArrowRight className="ml-2" /></h2>
+      </Link>
+      </div>
+      
       <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
         {projects.map((item, index) => (
           <ProjectCard

@@ -6,9 +6,9 @@ import Link from "next/link"
 
 const ProjectCard = ({title, img, description, stack, live, github}: ProjectCardProps) => {
   return (
-    <div className="flex flex-col border border-neutral-300 px-5 py-5 rounded-lg shadow-lg hover:shadow-2xl">
+    <div className="flex flex-col border border-neutral-300 p-5 rounded-lg shadow-lg hover:shadow-2xl">
       <h2 className="text-xl font-bold text-neutral-700 font-inter mb-3">{title}</h2>
-      {img && <Image className="w-full rounded-lg border border-neutral-300 shadow-md" width={100} height={70} src={img} alt="project-image" />}
+      {img && <Image className="w-full rounded-lg border border-neutral-300 shadow-md" width={100} height={100} src={img} alt="project-image" />}
       <p className="mt-5 text-neutral-400 tracking font-inter text-sm">{description}</p>
       <div className="mt-5 flex flex-wrap items-center gap-2 ">
         {stack.map((item, index) => (

@@ -1,9 +1,11 @@
 const navlinks = [
     {
-        link : "Projects"
+        title : "Projects",
+        route: "/projects"
     },
     {
-        link: "Contacts"
+        title: "Contacts",
+        route: "/contact"
     }
 ]
 
