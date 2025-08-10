@@ -15,9 +15,9 @@ const projects: ProjectCardProps[] = [
         description: "The ultimate sketchy canvas for teams. Brainstorm, wireframe, and visualize ideas in real-time with your team",
         stack: [
             "Typescript",
+            "WebSocket",
             "Nodejs",
             "RoughJS",
-            "WebSocket",
             "NextJS",
             "Postgres",
             "Prisma",
@@ -48,8 +48,7 @@ const projects: ProjectCardProps[] = [
             "Postgres",
             "Prisma",
           ],
-        live: "https://lost-found-drab.vercel.app/",
-        github: "https://github.com/Rakesh-Bhagat/Portfolio"
+        live: "http://ec2-54-147-49-18.compute-1.amazonaws.com:3001",
     },
     {
         title: "Career Compass",

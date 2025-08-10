@@ -2,5 +2,6 @@
 
 @theme{
   --font-inter: ['Inter', "sans"]
+  --breakpoint-tv: 2000px
 }
 

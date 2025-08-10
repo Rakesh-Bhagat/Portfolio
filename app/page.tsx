@@ -1,3 +1,4 @@
+"use client"
 import Navbar from "@/components/Navbar";
 import SkillCard from "@/components/SkillCard";
 import { Circle } from "lucide-react";
@@ -6,10 +7,40 @@ import skills from "@/data/skills";
 import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footer";
 import projects from "@/data/projects";
+import {AnimatePresence, motion, useAnimationFrame}  from "motion/react";
+import { useState } from "react";
+
+const gradients = [
+  "radial-gradient(ellipse 100% 40% at 50% 0%, rgba(0, 0, 255, 0.7), transparent 50%)",
+  "radial-gradient(ellipse 100% 40% at 50% 0%, rgba(255, 0, 0, 0.7), transparent 50%)",
+  "radial-gradient(ellipse 100% 40% at 50% 0%, rgba(255, 165, 0, 0.7), transparent 50%)",
+  "radial-gradient(ellipse 100% 40% at 50% 0%, rgba(0, 128, 0, 0.7), transparent 50%)",
+  "radial-gradient(ellipse 100% 40% at 50% 0%, rgba(130, 0, 219, 0.7), transparent 50%)",
+];
 
 export default function Home() {
+   const [gradientIndex, setGradientIndex] = useState(0);
+  
+  useAnimationFrame((t) => {
+    const idx = Math.floor((t / 2000) % gradients.length);
+    setGradientIndex(idx);
+  });
   return (
-    <div className=" h-screen mx-auto w-full md:max-w-xl flex flex-col font-poppins px-5">
+    <div className=" h-screen mx-auto w-full md:max-w-xl tv:max-w-2xl flex flex-col font-poppins px-5">
+      <AnimatePresence>
+        <motion.div
+          className="absolute top-20 left-[-100] w-full h-[300px] z-[-1]"
+          style={{
+            filter: "blur(100px)",
+            background: gradients[gradientIndex],
+            transition: "background 1s ease-in-out",
+          }}
+          initial={{ opacity: 0.9 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0.9 }}
+          transition={{ duration: 2 }}
+        />
+      </AnimatePresence>
       <Navbar />
       <div className="flex mb-10">
         <Image
@@ -33,7 +64,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <p className="tracking-normal leading-6 text-neutral-600 text-sm md:text-md">
+      <p className="tracking-normal leading-6 text-neutral-800 text-sm sm:text-md">
         I&apos;m a 21-year-old full stack developer from India, with a focus on
         building clean and functional web applications. I enjoy learning by
         building real projects and solving practical problems.
@@ -51,19 +82,17 @@ export default function Home() {
       <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
         {projects.map((item, index) => (
           <ProjectCard
-          key={index}
-          title={item.title}
-          img={item.img}
-          description={item.description}
-          stack={item.stack}
-          live={item.live}
-          github={item.github}
-        />
+            key={index}
+            title={item.title}
+            img={item.img}
+            description={item.description}
+            stack={item.stack}
+            live={item.live}
+            github={item.github}
+          />
         ))}
-        
-        
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
