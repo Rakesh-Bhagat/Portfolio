@@ -22,7 +22,7 @@ const projects: ProjectCardProps[] = [
             "Postgres",
             "Prisma",
           ],
-        live: "http://ec2-54-147-49-18.compute-1.amazonaws.com:3000",
+        live: "https://sketchydraw.bhagat.dev",
         github: "https://github.com/Rakesh-Bhagat/sketchyDraw"
     },
     {
@@ -48,7 +48,7 @@ const projects: ProjectCardProps[] = [
             "Postgres",
             "Prisma",
           ],
-        live: "http://ec2-54-147-49-18.compute-1.amazonaws.com:3001",
+        live: "https://bhagat.dev",
     },
     {
         title: "Career Compass",
