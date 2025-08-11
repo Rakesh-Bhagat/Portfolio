@@ -8,7 +8,7 @@ const Projects = () => {
     <div className=" h-screen mx-auto w-full md:max-w-2xl flex flex-col font-poppins px-5">
       
       <Navbar />
-      <h1 className="text-4xl font-bold mb-5">My Projects.</h1>
+      <h1 className="text-4xl font-bold mb-5 dark:text-neutral-400">My Projects.</h1>
       <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
         {projects.map((item, index) => (
           <ProjectCard

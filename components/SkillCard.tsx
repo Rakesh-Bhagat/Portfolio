@@ -6,12 +6,12 @@ interface skillCardProps{
 }
 const SkillCard = ({text, svg}: skillCardProps ) => {
   return (
-    <div className="flex flex-col px-10 py-2 rounded-lg border border-neutral-300 col-span-1 items-center justify-center shadow-sm hover:shadow-lg transition-shadow cursor-pointer">
+    <div className="flex flex-col px-10 py-2 rounded-lg border border-blue-500/30 dark:border-yellow-500/20 col-span-1 items-center justify-center shadow-sm shadow-blue-100 dark:shadow-yellow-900 hover:shadow-lg transition-shadow cursor-pointer">
         <div
         className="w-9 h-9"
         dangerouslySetInnerHTML={{ __html: svg }}
       />
-        <p className="mt-2 text-neutral-700 text-sm">{text}</p>
+        <p className="mt-2 text-neutral-700 dark:text-neutral-500 text-sm">{text}</p>
     </div>
   )
 }

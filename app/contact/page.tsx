@@ -2,7 +2,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { IconSend2 } from "@tabler/icons-react";
-import { div } from "motion/react-client";
 import { useState } from "react";
 
 const Contact = () => {
@@ -38,11 +37,11 @@ const Contact = () => {
   return (
     <div className=" h-screen mx-auto w-full md:max-w-2xl flex flex-col font-poppins px-5">
       <Navbar />
-      <h1 className="text-4xl font-bold ">Contact me</h1>
+      <h1 className="text-4xl font-bold dark:text-neutral-400 ">Contact me</h1>
       {received && (
-        <div className="mt-10 flex gap-2">
+        <div className="mt-10 flex gap-2 dark:text-neutral-400">
             <p className="">Thanks for the message. I will try to reply as soon as possible.</p>
-            <button onClick={()=>setReceived(false)} className="bg-yellow-200 px-3 rounded-md text-neutral-600 cursor-pointer">Message again</button>
+            <button onClick={()=>setReceived(false)} className="bg-yellow-200 dark:bg-yellow-500 px-3 rounded-md text-neutral-600 dark:text-neutral-900 items-center cursor-pointer">Message again</button>
         </div>
         )}
       {!received && (
@@ -54,14 +53,14 @@ const Contact = () => {
               onChange={(e) => setName(e.target.value)}
               type="text"
               placeholder="Name"
-              className="border border-neutral-200 rounded-md shadow-sm px-3 py-1"
+              className="border border-neutral-200 dark:border-neutral-800 rounded-md shadow-sm px-3 py-1"
             />
             <input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               type="text"
               placeholder="Email"
-              className="border border-neutral-200 rounded-md shadow-sm px-3 py-1"
+              className="border border-neutral-200 dark:border-neutral-800 rounded-md shadow-sm px-3 py-1"
             />
           </div>
           <textarea
@@ -70,11 +69,11 @@ const Contact = () => {
             name="desc"
             id="desc"
             placeholder="Leave feedback about site, Career Opurtunities or just say hello etc."
-            className="border w-full border-neutral-200 rounded-md shadow-sm px-3 py-1 h-24"
+            className="border w-full border-neutral-200 dark:border-neutral-800 rounded-md shadow-sm px-3 py-1 h-24"
           ></textarea>
           <button
             type="submit"
-            className="bg-gray-900 text-neutral-100 rounded-md px-4 py-2 mt-2 text-sm flex justify-center font-semibold font-inter w-full cursor-pointer"
+            className="bg-gray-900 text-neutral-100 dark:text-neutral-400 rounded-md px-4 py-2 mt-2 text-sm flex justify-center font-semibold font-inter w-full cursor-pointer "
           >
             Send Message <IconSend2 className="flex ml-2" />
           </button>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Poppins  } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Poppins } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,14 +13,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 const inter = Inter({
-  subsets: ['latin'],
-  variable: "--font-inter"
-})
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'], // choose weights you need
-  display: 'swap',
-  variable: "--font-poppins"
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"], // choose weights you need
+  display: "swap",
+  variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
@@ -33,11 +34,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${poppins.variable} antialiased selection:bg-green-100 selection:text-neutral-600`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${poppins.variable} antialiased selection:bg-green-100 selection:text-neutral-600 dark:bg-[#0a0a0a]`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
