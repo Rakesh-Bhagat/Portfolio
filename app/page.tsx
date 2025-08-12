@@ -58,7 +58,22 @@ export default function Home() {
         />
         <div className="flex flex-col">
           <h1 className="text-xl sm:text-3xl font-semibold mb-2 tracking-tighter text-neutral-800 dark:text-yellow-100">
-            Hey, I&apos;m Rakesh <span>👋</span>
+            Hey, I&apos;m Rakesh{" "}
+            <motion.span
+              style={{
+                display: "inline-block",
+                transformOrigin: "bottom center",
+              }}
+              className="cursor-default"
+              initial={{ rotate: 0 }}
+              whileHover={{ rotate: [0, 15, -10, 15, -10, 15, -10, 0] }}
+              transition={{
+                duration: 1.8,
+                ease: "easeInOut"
+              }}
+            >
+              👋
+            </motion.span>
           </h1>
 
           <div className="flex">
