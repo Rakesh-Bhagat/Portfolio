@@ -6,7 +6,6 @@ import Image from "next/image";
 import skills from "@/data/skills";
 import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footer";
-import projects from "@/data/projects";
 import { AnimatePresence, motion, useAnimationFrame } from "motion/react";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -69,7 +68,7 @@ export default function Home() {
               whileHover={{ rotate: [0, 15, -10, 15, -10, 15, -10, 0] }}
               transition={{
                 duration: 1.8,
-                ease: "easeInOut"
+                ease: "easeInOut",
               }}
             >
               👋
@@ -109,17 +108,30 @@ export default function Home() {
       </div>
 
       <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
-        {projects.map((item, index) => (
-          <ProjectCard
-            key={index}
-            title={item.title}
-            img={item.img}
-            description={item.description}
-            stack={item.stack}
-            live={item.live}
-            github={item.github}
-          />
-        ))}
+        <ProjectCard
+          title="SketchyDraw"
+          img="/sketchydraw.png"
+          description="A collaborative online whiteboard built with RoughJS for sketch-style drawing. Features real-time multi-user editing via WebSockets, room-based collaboration, and Postgres persistence for saving sketches."
+          stack={[
+            "Typescript",
+            "WebSocket",
+            "Nodejs",
+            "RoughJS",
+            "NextJS",
+            "Postgres",
+            "Prisma",
+          ]}
+          live="https://sketchydraw.bhagat.dev"
+          github="https://github.com/Rakesh-Bhagat/sketchyDraw"
+        />
+        <ProjectCard
+          title="GGV Lost & Found"
+          img="/lost.png"
+          description="A campus-focused lost and found platform for reporting and locating items. Includes user authentication, item posting, and a community-driven way to reunite owners with their belongings."
+          stack={["Typescript", "NextJS", "Postgres", "Prisma"]}
+          live="https://lost-found-drab.vercel.app/"
+          github="https://github.com/Rakesh-Bhagat/Lost-Found"
+        />
       </div>
       <Footer />
     </div>

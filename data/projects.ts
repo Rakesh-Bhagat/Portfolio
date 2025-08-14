@@ -12,7 +12,7 @@ const projects: ProjectCardProps[] = [
     {
         title:"SketchyDraw",
         img: "/sketchydraw.png",
-        description: "The ultimate sketchy canvas for teams. Brainstorm, wireframe, and visualize ideas in real-time with your team",
+        description: "A collaborative online whiteboard built with RoughJS for sketch-style drawing. Features real-time multi-user editing via WebSockets, room-based collaboration, and Postgres persistence for saving sketches.",
         stack: [
             "Typescript",
             "WebSocket",
@@ -27,7 +27,7 @@ const projects: ProjectCardProps[] = [
     },
     {
         title: "GGV Lost & Found",
-        description: "The easiest way to find your lost items or report found items on campus. Connect with the community and help each other out.",
+        description: "A campus-focused lost and found platform for reporting and locating items. Includes user authentication, item posting, and a community-driven way to reunite owners with their belongings.",
         img: "/lost.png",
         stack: [
             "Typescript",
@@ -39,9 +39,22 @@ const projects: ProjectCardProps[] = [
         github: "https://github.com/Rakesh-Bhagat/Lost-Found"
     },
     {
+        title: "Plantify AI",
+        img: "/plantify.png",
+        description:"An AI-driven plant identifier that lets users upload images for instant species recognition. Powered by Google’s Gemini AI, it provides plant names, species, and care instructions through a simple, user-friendly interface.",
+        stack: [
+            "Javascript",
+            "ReactJS",
+            "Tailwind CSS",
+            "Gemini API"
+        ],
+        live: "https://plantify-hazel.vercel.app/",
+        github: "https://github.com/Rakesh-Bhagat/Plantify"
+    },
+    {
         title: "Portfolio",
         img: "/portfolio.png",
-        description: "I'm a 21-year-old full stack developer from India, with a focus on building clean and functional web applications.",
+        description: "A personal portfolio website showcasing my skills, projects, and experience. Designed for clean navigation and responsive performance across all devices.",
         stack: [
             "Typescript",
             "NextJS",
@@ -53,7 +66,7 @@ const projects: ProjectCardProps[] = [
     {
         title: "Career Compass",
         img: "/careerLight.png",
-        description:"Career Compass helps you navigate your professional journey by recommending personalized work opportunities or educational courses based on your unique profile.",
+        description:"An AI-powered career guidance platform that recommends personalized job opportunities and courses based on user profiles, academic history, and preferences.",
         stack: [
             "Typescript",
             "NextJS",
@@ -62,6 +75,7 @@ const projects: ProjectCardProps[] = [
         ],
         live: "https://career-compass-seven.vercel.app/",
         github: "https://github.com/Rakesh-Bhagat/Career-Compass"
-    }
+    },
+    
 ]
 export default projects
