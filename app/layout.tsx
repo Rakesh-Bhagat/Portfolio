@@ -23,9 +23,61 @@ const poppins = Poppins({
   variable: "--font-poppins",
 });
 
+
 export const metadata: Metadata = {
-  title: "Rakesh bhagat",
-  description: "full stack engineer portfolio website",
+  metadataBase: new URL("https://bhagat.dev"),
+
+  title: {
+    default: "Rakesh Bhagat | Full Stack Developer",
+    template: "%s | Rakesh Bhagat",
+  },
+
+  description:
+    "Portfolio of Rakesh Bhagat, a full stack developer from India building modern web applications using Next.js, React, Node.js, and TypeScript.",
+
+  keywords: [
+    "Rakesh Bhagat",
+    "bhagat.dev",
+    "Full Stack Developer",
+    "Next.js Developer",
+    "React Developer",
+    "Node.js Developer",
+    "TypeScript Developer",
+    "Web Developer India",
+  ],
+
+  authors: [{ name: "Rakesh Bhagat", url: "https://bhagat.dev" }],
+  creator: "Rakesh Bhagat",
+
+  openGraph: {
+    title: "Rakesh Bhagat | Full Stack Developer",
+    description:
+      "21-year-old full stack developer building modern web applications with Next.js, React, and Node.js.",
+    url: "https://bhagat.dev",
+    siteName: "Rakesh Bhagat Portfolio",
+    images: [
+      {
+        url: "/preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Rakesh Bhagat Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Rakesh Bhagat | Full Stack Developer",
+    description:
+      "Full stack developer building clean and scalable web applications.",
+    images: ["/preview.png"],
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
