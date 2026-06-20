@@ -2,6 +2,22 @@ import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import ProjectCard from "@/components/ProjectCard"
 import projects from "@/data/projects"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Selected projects by Rakesh Bhagat — full stack web applications built with Next.js, React, Node.js, TypeScript and Postgres.",
+  alternates: {
+    canonical: "/projects",
+  },
+  openGraph: {
+    title: "Projects | Rakesh Bhagat",
+    description:
+      "Selected projects by Rakesh Bhagat — full stack web applications built with Next.js, React, Node.js, TypeScript and Postgres.",
+    url: "https://bhagat.dev/projects",
+  },
+}
 
 const Projects = () => {
   return (

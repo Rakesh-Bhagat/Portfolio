@@ -9,7 +9,7 @@ const ProjectCard = ({title, img, description, stack, live, github}: ProjectCard
   return (
     <div className="flex flex-col border border-blue-500/40 dark:border-yellow-500/20 p-5 rounded-lg shadow-md shadow-blue-100 dark:shadow-none hover:shadow-lg dark:hover:shadow-none">
       <h2 className="text-xl font-bold text-neutral-700 dark:text-neutral-500 font-inter mb-3">{title}</h2>
-      {img && <Image className="w-full rounded-lg border border-neutral-300 dark:border-neutral-700 shadow-md" width={100} height={100} src={img} alt="project-image" />}
+      {img && <Image className="w-full rounded-lg border border-neutral-300 dark:border-neutral-700 shadow-md" width={100} height={100} src={img} alt={`${title} project screenshot`} />}
       <p className="mt-5 text-neutral-400 dark:text-neutral-500 tracking font-inter text-sm">{description}</p>
       <div className="mt-5 flex flex-wrap items-center gap-2 ">
         {stack.map((item, index) => (

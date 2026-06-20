@@ -35,6 +35,10 @@ export const metadata: Metadata = {
   description:
     "Portfolio of Rakesh Bhagat, a full stack developer from India building modern web applications using Next.js, React, Node.js, and TypeScript.",
 
+  alternates: {
+    canonical: "/",
+  },
+
   keywords: [
     "Rakesh Bhagat",
     "bhagat.dev",
@@ -78,6 +82,39 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Rakesh Bhagat",
+  url: "https://bhagat.dev",
+  image: "https://bhagat.dev/dp.png",
+  jobTitle: "Full Stack Developer",
+  description:
+    "Full stack developer from India building modern web applications using Next.js, React, Node.js, and TypeScript.",
+  nationality: "Indian",
+  knowsAbout: [
+    "Next.js",
+    "React",
+    "Node.js",
+    "TypeScript",
+    "PostgreSQL",
+    "Full Stack Web Development",
+  ],
+  sameAs: ["https://github.com/Rakesh-Bhagat"],
 };
 
 export default function RootLayout({
@@ -90,6 +127,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${poppins.variable} antialiased selection:bg-green-100 selection:text-neutral-600 dark:bg-[#0a0a0a]`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <Providers>{children}</Providers>
       </body>
     </html>

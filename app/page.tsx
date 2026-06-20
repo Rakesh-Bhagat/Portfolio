@@ -1,4 +1,3 @@
-"use client";
 import Navbar from "@/components/Navbar";
 import SkillCard from "@/components/SkillCard";
 import { ArrowRight, Circle } from "lucide-react";
@@ -6,46 +5,14 @@ import Image from "next/image";
 import skills from "@/data/skills";
 import ProjectCard from "@/components/ProjectCard";
 import Footer from "@/components/Footer";
-import { AnimatePresence, motion, useAnimationFrame } from "motion/react";
-import { useEffect, useState } from "react";
 import Link from "next/link";
-
-const gradients = [
-  "radial-gradient(ellipse 100% 40% at 50% 0%, rgba(0, 0, 255, 0.7), transparent 50%)",
-  "radial-gradient(ellipse 100% 40% at 50% 0%, rgba(255, 0, 0, 0.7), transparent 50%)",
-  "radial-gradient(ellipse 100% 40% at 50% 0%, rgba(255, 165, 0, 0.7), transparent 50%)",
-  "radial-gradient(ellipse 100% 40% at 50% 0%, rgba(0, 128, 0, 0.7), transparent 50%)",
-  "radial-gradient(ellipse 100% 40% at 50% 0%, rgba(130, 0, 219, 0.7), transparent 50%)",
-];
+import AnimatedBackground from "@/components/AnimatedBackground";
+import WavingHand from "@/components/WavingHand";
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
-  const [gradientIndex, setGradientIndex] = useState(0);
-
-  useAnimationFrame((t) => {
-    const idx = Math.floor((t / 2000) % gradients.length);
-    setGradientIndex(idx);
-  });
-
-  if (!mounted) return null;
   return (
     <div className=" h-screen mx-auto w-full md:max-w-2xl flex flex-col font-poppins px-5 ">
-      <AnimatePresence>
-        <motion.div
-          className="absolute top-20 left-[-100] w-full h-[300px] z-[-1]"
-          style={{
-            filter: "blur(100px)",
-            background: gradients[gradientIndex],
-            transition: "background 1s ease-in-out",
-          }}
-          initial={{ opacity: 0.9 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0.9 }}
-          transition={{ duration: 2 }}
-        />
-      </AnimatePresence>
+      <AnimatedBackground />
       <Navbar />
       <div className="flex mb-10">
         <Image
@@ -53,26 +20,12 @@ export default function Home() {
           src={"/dp.png"}
           width={70}
           height={70}
-          alt="dp"
+          alt="Portrait of Rakesh Bhagat, full stack developer"
+          priority
         />
         <div className="flex flex-col">
           <h1 className="text-xl sm:text-3xl font-semibold mb-2 tracking-tighter text-neutral-800 dark:text-yellow-100">
-            Hey, I&apos;m Rakesh{" "}
-            <motion.span
-              style={{
-                display: "inline-block",
-                transformOrigin: "bottom center",
-              }}
-              className="cursor-default"
-              initial={{ rotate: 0 }}
-              whileHover={{ rotate: [0, 15, -10, 15, -10, 15, -10, 0] }}
-              transition={{
-                duration: 1.8,
-                ease: "easeInOut",
-              }}
-            >
-              👋
-            </motion.span>
+            Hey, I&apos;m Rakesh <WavingHand />
           </h1>
 
           <div className="flex">
