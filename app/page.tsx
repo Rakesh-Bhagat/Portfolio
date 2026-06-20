@@ -18,7 +18,7 @@ export default function Home() {
       <div className="flex mb-10">
         <Image
           className="rounded-full mr-8"
-          src={"/dp.png"}
+          src={"/dp2.png"}
           width={70}
           height={70}
           alt="Portrait of Rakesh Bhagat, full stack developer"
