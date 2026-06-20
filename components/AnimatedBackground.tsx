@@ -22,7 +22,7 @@ const AnimatedBackground = () => {
     <AnimatePresence>
       <motion.div
         aria-hidden="true"
-        className="absolute top-20 left-[-100] w-full h-[300px] z-[-1]"
+        className="fixed top-0 inset-x-0 w-screen h-[300px] -z-10 pointer-events-none"
         style={{
           filter: "blur(100px)",
           background: gradients[gradientIndex],

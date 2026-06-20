@@ -13,11 +13,11 @@ const ProjectCard = ({title, img, description, stack, live, github}: ProjectCard
       <p className="mt-5 text-neutral-400 dark:text-neutral-500 tracking font-inter text-sm">{description}</p>
       <div className="mt-5 flex flex-wrap items-center gap-2 ">
         {stack.map((item, index) => (
-          <div className="bg-blue-50 dark:bg-yellow-900 rounded-full px-3 text-center font-bold py-1 text-neutral-700 dark:text-neutral-900 text-xs" key={index}>{item}</div>
+          <div className="bg-blue-50 dark:bg-[#f0b100] rounded-full px-3 text-center font-bold py-1 text-neutral-700 dark:text-neutral-900 text-xs" key={index}>{item}</div>
         ))}
       </div>
       <div className="mt-5 grid grid-cols-2  gap-2 items-center">
-      {live && <Link target="_blank" href={live}><p className="flex gap-2 bg-gray-900 text-neutral-200 px-4 rounded-lg text-sm py-1"> <Globe width={20}/> Website</p></Link>}
+      {live && <Link target="_blank" href={live}><p className="flex gap-2 bg-gray-900 text-neutral-200 px-4 rounded-lg text-sm py-1 items-center"> <Globe width={20}/> Website</p></Link>}
       {github && <Link target="_blank" href={github}><p className="flex gap-2 bg-gray-900 text-neutral-200 px-4 rounded-lg text-sm py-1"><IconBrandGithub width={20} />github</p></Link>}
       </div>
       

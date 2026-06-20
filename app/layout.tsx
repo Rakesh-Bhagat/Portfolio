@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import StarField from "@/components/StarField";
+import CustomCursor from "@/components/CustomCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -131,7 +133,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
-        <Providers>{children}</Providers>
+        <Providers>
+          <CustomCursor />
+          <StarField />
+          {children}
+        </Providers>
       </body>
     </html>
   );

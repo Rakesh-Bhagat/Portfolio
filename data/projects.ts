@@ -10,6 +10,34 @@ export interface ProjectCardProps {
 
 const projects: ProjectCardProps[] = [
     {
+        title: "Chate CRM",
+        img: "/chate.png",
+        description: "A multi-branch CRM for lead management and WhatsApp automation. Ingests leads from 4 channels (Meta Ads, Shopify, walk-in QR codes, and inbound call-log webhooks) with HMAC-verified webhooks, idempotency keys, and round-robin counselor assignment. Features a config-driven pipeline-stage engine with auto-sending WhatsApp templates and role-based access enforced through PostgreSQL Row-Level Security.",
+        stack: [
+            "Next.js",
+            "Typescript",
+            "PostgreSQL",
+            "Supabase",
+            "RLS",
+            "Webhooks",
+        ],
+        live: "https://crm.chatecoachingclasses.co",
+    },
+    {
+        title: "ProfitMaster",
+        img: "/profitmaster.png",
+        description: "An online education and events platform offering paid courses, live events, and training programs with an integrated checkout and payment flow, testimonials, and a media gallery. Paired with a custom admin dashboard for managing blog content, event registrations, and media — built on Supabase auth, Prisma, and Cloudflare R2 storage.",
+        stack: [
+            "Next.js",
+            "Typescript",
+            "Supabase",
+            "Prisma",
+            "Tailwind CSS",
+            "Cloudflare R2",
+        ],
+        live: "https://profitmaster.in",
+    },
+    {
         title:"SketchyDraw",
         img: "/sketchydraw.png",
         description: "A collaborative online whiteboard built with RoughJS for sketch-style drawing. Features real-time multi-user editing via WebSockets, room-based collaboration, and Postgres persistence for saving sketches.",

@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import SkillCard from "@/components/SkillCard";
-import { ArrowRight, Circle } from "lucide-react";
+import { ArrowRight, Circle, Download } from "lucide-react";
 import Image from "next/image";
 import skills from "@/data/skills";
 import ProjectCard from "@/components/ProjectCard";
@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import WavingHand from "@/components/WavingHand";
+import ExperienceSection from "@/components/ExperienceSection";
 
 export default function Home() {
   return (
@@ -38,10 +39,23 @@ export default function Home() {
         </div>
       </div>
       <p className="tracking-normal leading-6 text-neutral-800 dark:text-neutral-400">
-        I&apos;m a 21-year-old full stack developer from India, with a focus on
-        building clean and functional web applications. I enjoy learning by
-        building real projects and solving practical problems.
+        I&apos;m a full stack developer from India with a soft spot for the
+        backend, currently building production apps at{" "}
+        <span className="font-semibold text-neutral-900 dark:text-neutral-300">
+          Crescentia One
+        </span>
+        . I like wiring up APIs, automating the boring stuff, and chasing down
+        the kind of bugs that only show up in production. Mostly I enjoy turning
+        messy ideas into things that actually work.
       </p>
+
+      <a
+        href="/Rakesh_bhagat_resume_june.pdf"
+        download
+        className="mt-6 flex w-fit items-center gap-2 rounded-md bg-gray-900 dark:bg-yellow-500 px-4 py-2 text-sm font-semibold text-neutral-100 dark:text-neutral-900 transition-opacity hover:opacity-90"
+      >
+        <Download width={18} /> Download Resume
+      </a>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 mt-7 justify-between gap-2">
         {skills.map((item, index) => (
@@ -49,7 +63,9 @@ export default function Home() {
         ))}
       </div>
 
-      <div className=" mt-10 flex justify-between items-center">
+      <ExperienceSection />
+
+      <div className=" mt-12 flex justify-between items-center">
         <h2 className="flex bg-blue-100 dark:bg-yellow-600 w-fit px-2 py-1 font-poppins rounded-md text-neutral-500 dark:text-neutral-900 text-xs border border-blue-300 dark:border-yellow-500 shadow-xs font-semibold">
           Recent Projects
         </h2>
@@ -62,28 +78,32 @@ export default function Home() {
 
       <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
         <ProjectCard
-          title="SketchyDraw"
-          img="/sketchydraw.png"
-          description="A collaborative online whiteboard built with RoughJS for sketch-style drawing. Features real-time multi-user editing via WebSockets, room-based collaboration, and Postgres persistence for saving sketches."
+          title="Chate CRM"
+          img="/chate.png"
+          description="A multi-branch CRM for lead management and WhatsApp automation. Ingests leads from 4 channels (Meta Ads, Shopify, walk-in QR codes, and inbound call-log webhooks) with HMAC-verified webhooks and round-robin counselor assignment, a config-driven pipeline-stage engine with auto-sending WhatsApp templates, and role-based access enforced through PostgreSQL Row-Level Security."
           stack={[
+            "Next.js",
             "Typescript",
-            "WebSocket",
-            "Nodejs",
-            "RoughJS",
-            "NextJS",
-            "Postgres",
-            "Prisma",
+            "PostgreSQL",
+            "Supabase",
+            "RLS",
+            "Webhooks",
           ]}
-          live="https://sketchydraw.bhagat.dev"
-          github="https://github.com/Rakesh-Bhagat/sketchyDraw"
+          live="https://crm.chatecoachingclasses.co"
         />
         <ProjectCard
-          title="GGV Lost & Found"
-          img="/lost.png"
-          description="A campus-focused lost and found platform for reporting and locating items. Includes user authentication, item posting, and a community-driven way to reunite owners with their belongings."
-          stack={["Typescript", "NextJS", "Postgres", "Prisma"]}
-          live="https://lost-found-drab.vercel.app/"
-          github="https://github.com/Rakesh-Bhagat/Lost-Found"
+          title="ProfitMaster"
+          img="/profitmaster.png"
+          description="An online education and events platform offering paid courses, live events, and training programs with an integrated checkout and payment flow. Paired with a custom admin dashboard for managing blog content, event registrations, and media — built on Supabase, Prisma, and Cloudflare R2 storage."
+          stack={[
+            "Next.js",
+            "Typescript",
+            "Supabase",
+            "Prisma",
+            "Tailwind CSS",
+            "Cloudflare R2",
+          ]}
+          live="https://profitmaster.in"
         />
       </div>
       <Footer />
