@@ -50,7 +50,7 @@ export default function Home() {
       </p>
 
       <a
-        href="/Rakesh_bhagat_resume_june.pdf"
+        href="/Rakesh_Bhagat_updated_resume.pdf"
         download
         className="mt-6 flex w-fit items-center gap-2 rounded-md bg-gray-900 dark:bg-yellow-500 px-4 py-2 text-sm font-semibold text-neutral-100 dark:text-neutral-900 transition-opacity hover:opacity-90"
       >
