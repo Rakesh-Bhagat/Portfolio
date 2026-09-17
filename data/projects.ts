@@ -91,19 +91,6 @@ const projects: ProjectCardProps[] = [
           ],
         live: "https://bhagat.dev",
     },
-    {
-        title: "Career Compass",
-        img: "/careerLight.png",
-        description:"An AI-powered career guidance platform that recommends personalized job opportunities and courses based on user profiles, academic history, and preferences.",
-        stack: [
-            "Typescript",
-            "NextJS",
-            "Postgres",
-            "Prisma",
-        ],
-        live: "https://career-compass-seven.vercel.app/",
-        github: "https://github.com/Rakesh-Bhagat/Career-Compass"
-    },
     
 ]
 export default projects
