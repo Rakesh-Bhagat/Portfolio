@@ -8,15 +8,15 @@ export interface ExperienceItem {
 
 const experience: ExperienceItem[] = [
   {
-    role: "Full Stack Developer Intern",
+    role: "Full Stack Developer",
     company: "Crescentia One",
     location: "Remote",
     period: "December 2025 – Present",
     points: [
-      "Architected full-stack e-commerce backends with Node.js / Express.js, designing secure RESTful APIs for payment gateway integration and inventory management across 3 client platforms, reducing API response time by 30%.",
-      "Resolved a production WhatsApp integration failure where every business-initiated send returned a 500 error, tracing it to an approved template's dynamic URL button requiring a button component in the payload, restoring automated messaging.",
-      "Diagnosed slow cross-page navigation from a Vercel↔Supabase region mismatch, then cut perceived load time with App-Router streaming skeletons and cookie-only session reads across 9 routes.",
-      "Migrated client infrastructure from WordPress to Next.js + Express.js, re-engineering the database layer and SSR pipeline and improving Core Web Vitals scores by 40%.",
+      "Migrated a client's production website (ProfitMaster) off company-owned infrastructure onto the client's own accounts with zero customer-facing downtime during cutover - transferred the GitHub repository, moved the Supabase Postgres database, copied Cloudflare R2 object storage via rclone, transferred the profitmaster.in domain, and redeployed the Next.js app as a Cloudflare Worker on the client's account.",
+      "Diagnosed slow cross-page navigation in production by identifying a Vercel↔Supabase region mismatch from response headers (~250 ms round-trips per query), then cut perceived load time by adding App-Router streaming skeletons and replacing per-page auth.getUser() network calls with cookie-only session reads across 9 routes.",
+      "Owned Leopardol, the company's e-commerce platform, as sole full-stack engineer across 3 services (API, admin panel, storefront) from system design through production deployment.",
+      "Migrated client infrastructure from WordPress to Next.js on Cloudflare Workers, re-engineering the database layer and SSR pipeline, and integrating a Razorpay payment gateway for event registrations that processed Rs 3,00,000 in transactions from a single event.",
     ],
   },
 ];
