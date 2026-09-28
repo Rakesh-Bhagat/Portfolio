@@ -78,32 +78,34 @@ export default function Home() {
 
       <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
         <ProjectCard
-          title="Chate CRM"
-          img="/chate.png"
-          description="A multi-branch CRM for lead management and WhatsApp automation. Ingests leads from 4 channels (Meta Ads, Shopify, walk-in QR codes, and inbound call-log webhooks) with HMAC-verified webhooks and round-robin counselor assignment, a config-driven pipeline-stage engine with auto-sending WhatsApp templates, and role-based access enforced through PostgreSQL Row-Level Security."
+          title="Call AI"
+          img="/callai.png"
+          description="Real-time voice agent for loans and deposits: Gemini Live, FastAPI and Next.js. Verifies callers, answers from tools, supports barge-in and human escalation."
           stack={[
+            "FastAPI",
             "Next.js",
-            "Typescript",
-            "PostgreSQL",
-            "Supabase",
-            "RLS",
-            "Webhooks",
+            "Google gemini",
+            "Twilio Media Streams",
+            "Websocket",
           ]}
-          live="https://crm.chatecoachingclasses.co"
+          live="https://callai.bhagat.dev"
+          github="https://github.com/Rakesh-Bhagat/Call-AI"
         />
         <ProjectCard
-          title="ProfitMaster"
-          img="/profitmaster.png"
-          description="An online education and events platform offering paid courses, live events, and training programs with an integrated checkout and payment flow. Paired with a custom admin dashboard for managing blog content, event registrations, and media — built on Supabase, Prisma, and Cloudflare R2 storage."
+          title="SketchyDraw"
+          img="/sketchydraw.png"
+          description="A collaborative online whiteboard built with RoughJS for sketch-style drawing. Features real-time multi-user editing via WebSockets, room-based collaboration, and Postgres persistence for saving sketches."
           stack={[
-            "Next.js",
             "Typescript",
-            "Supabase",
+            "WebSocket",
+            "Nodejs",
+            "RoughJS",
+            "NextJS",
+            "Postgres",
             "Prisma",
-            "Tailwind CSS",
-            "Cloudflare R2",
           ]}
-          live="https://profitmaster.in"
+          live= "https://sketchydraw.bhagat.dev"
+          github= "https://github.com/Rakesh-Bhagat/sketchyDraw"
         />
       </div>
       <Footer />
