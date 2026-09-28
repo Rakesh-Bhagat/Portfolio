@@ -10,6 +10,20 @@ export interface ProjectCardProps {
 
 const projects: ProjectCardProps[] = [
     {
+        title: "Call AI",
+        img: "/callai.png",
+        description: "Real-time voice agent for loans and deposits: Gemini Live, FastAPI and Next.js. Verifies callers, answers from tools, supports barge-in and human escalation.",
+        stack: [
+            "FastAPI",
+            "Next.js",
+            "Google gemini",
+            "Twilio Media Streams",
+            "Websocket"
+        ],
+        live: "https://callai.bhagat.dev",
+        github: "https://github.com/Rakesh-Bhagat/Call-AI"
+    },
+    {
         title: "Chate CRM",
         img: "/chate.png",
         description: "A multi-branch CRM for lead management and WhatsApp automation. Ingests leads from 4 channels (Meta Ads, Shopify, walk-in QR codes, and inbound call-log webhooks) with HMAC-verified webhooks, idempotency keys, and round-robin counselor assignment. Features a config-driven pipeline-stage engine with auto-sending WhatsApp templates and role-based access enforced through PostgreSQL Row-Level Security.",
